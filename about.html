@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Portfolio - Home</title>
+    <title>Portfolio - About</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,51 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="dist/css/app.css">
 
-    <!-- Link Swiper's CSS -->
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- Scripts -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js"
-        integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-
-    <script>
-        //require files
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-
-            /*loop through a collection of all HTML elements:*/
-            z = document.getElementsByTagName("*");
-
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                    /*make an HTTP request using the attribute value as the file name:*/
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                            /*remove the attribute, and call this function once more:*/
-                            elmnt.removeAttribute("w3-include-html");
-                            includeHTML();
-                        }
-                    }      
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    /*exit the function:*/
-                    return;
-                }
-            }
-        };
-
+	<script>
         // Dark-Light Theme Mode
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
@@ -107,12 +65,12 @@
             <div>
                 <ul class="flex items-center space-x-6 text-sm text-independence text-opacity-80 dark:text-slate-400 dark:text-opacity-60">
                     <li>
-                        <a href="/" class="block rounded-[10px] cursor-pointer hover:text-deep-champagne-lighter transition duration-100 ease-linear" title="Home page">
+                        <a href="http://portfolio/#reachMe" class="block rounded-[10px] cursor-pointer hover:text-deep-champagne-lighter transition duration-100 ease-linear" title="Home page">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="http://portfolio/about.html" class="block rounded-[10px] cursor-pointer hover:text-deep-champagne-lighter transition duration-100 ease-linear" title="About page">
+                        <a href="./about.html" class="block rounded-[10px] cursor-pointer hover:text-deep-champagne-lighter transition duration-100 ease-linear" title="About page">
                             About
                         </a>
                     </li>
@@ -184,21 +142,108 @@
     </header>
 
     <main>
-        <div w3-include-html="./sections/hero.html"></div> 
+        <div class="px-6 py-16 max-w-7xl mx-auto">
+			<div class=" flex flex-col justify-between space-y-8  sm:flex-row sm:items-start sm:space-x-2 md:justify-center md:space-y-0 lg:space-x-48">
+				<div class="max-w-md flex flex-col items-start space-y-8">
+					<div class="tracking-wide text-independence dark:text-slate-300 text-opacity-60 space-y-4">
+						<p class="ml-1 text-xl">Hello, I am</p>
+						<h1 class="text-5xl lg:text-7xl text-deep-champagne font-black uppercase">
+							Osman Moharram
+						</h1>
+						<p class="text-sm font-normal">
+							Web Developer &bullet; UI/UX Designer &bullet; Real Madrid FC Fan
+						</p>
+					</div>
+					<div class="flex items-center justify-center  space-x-4">
+						<a href="assets/osmanMoharramResume.pdf" target="_blank" class="px-6 py-2 rounded-[10px] bg-deep-champagne hover:bg-deep-champagne hover:bg-opacity-80 text-independence-lighter transition duration-100 ease-linear" title="Go to reach me form">Resume</a>
+					</div>
+				</div>
+	
+				<div class="relative flex items-center justify-end cursor-grab">
+					<div class="swiper mySwiper w-[312px] h-[320px]">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide flex justify-center items-center">
+								<img src="./img/about/me1.jpg" alt="Me1" class="rounded-[18px]">
+							</div>
+							<div class="swiper-slide flex justify-center items-center rounded-[18px]">
+								<img src="./img/about/me2.jpg" alt="Me2" class="rounded-[18px]">
+							</div>
+							<div class="swiper-slide flex justify-center items-center">
+								<img src="./img/about/me3.jpg" alt="Me3" class="rounded-[18px]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <div w3-include-html="./sections/services.html"></div> 
-
-        <div w3-include-html="./sections/projects.html"></div> 
-
-        <div w3-include-html="./sections/contact.html"></div> 
+			<div class="lg:px-28 pt-12 tracking-wide text-independence dark:text-slate-300 text-opacity-60">
+				<span class="block ml-6 text-xl tracking-wide">Skills</span>
+				<ul class="mt-4 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 lg:grid-rows-2 lg:place-items-center gap-y-12">
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/laravel.svg" alt="Laravel" class="w-16 h-16">
+						<span class="block mt-3">Laravel</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/symphony.svg" alt="Symphony" class="w-16 h-w-16">
+						<span class="block mt-3">Symphony</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/php.svg" alt="PHP" class="w-16 h-w-16">
+						<span class="block mt-3">PHP</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/alpine.js.svg" alt="Alpine.js" class="w-16 h-w-16">
+						<span class="block mt-3">Apline.js</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/javascript.svg" alt="Javascript" class="w-16 h-w-16">
+						<span class="block mt-3">Javascript</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/tailwindcss.svg" alt="Tailwindcss" class="w-16 h-w-16">
+						<span class="block mt-3">Tailwindcss</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/bootstrap.svg" alt="Bootstrap" class="w-16 h-w-16">
+						<span class="block mt-3">Bootstrap</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/sass.svg" alt="Sass" class="w-16 h-w-16">
+						<span class="block mt-3">Sass</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/figma.svg" alt="Figma" class="w-12 h-w-12">
+						<span class="block mt-3">Figma</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/git.svg" alt="Git" class="w-16 h-w-16">
+						<span class="block mt-3">Git</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/mysql.svg" alt="Mysql" class="w-16 h-w-16">
+						<span class="block mt-3">Mysql</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/wordpress.svg" alt="Wordpress" class="w-16 h-w-16">
+						<span class="block mt-3">Wordpress</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/html.svg" alt="HTML5" class="w-16 h-w-16">
+						<span class="block mt-3">HTML5</span>
+					</li>
+					<li class="flex flex-col items-center justify-center text-sm font-normal">
+						<img src="./img/brands/css.svg" alt="CSS" class="w-16 h-w-16">
+						<span class="block mt-3">CSS</span>
+					</li>
+				</ul>
+			</div>
+		</div>
     </main>
 
     <!-- scripts -->
-    <script> includeHTML(); </script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="./js/app.js"></script>
-    <script>
-    </script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
+
