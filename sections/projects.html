@@ -170,7 +170,7 @@
             <div x-data="{ open: false }" class="col-start-2 row-start-2">
                 <div class="max-w-lg mx-auto transform rotate-12 translate-y-40 rounded-[10px] sm:max-w-full sm:translate-x-44 sm:scale-110 lg:translate-x-64">
                     <img
-                        src="/img/projects/doquot/index.png"
+                        src="/img/projects/quotations/index.png"
                         alt="Quotations Package"
                         @click="open = true; document.querySelector('body').style.overflow = 'hidden';"
                         class="rounded-[10px]  lg:blur-sm hover:blur-0 cursor-pointer transition duration-100 ease-linear"
@@ -217,7 +217,7 @@
                                 <div class="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-8">
                                     <!-- Carousel -->
                                     <div class="lg:col-span-2">
-                                        <div class="swiper doquotSwiper lg:h-[400px]">
+                                        <div class="swiper quotationsSwiper lg:h-[400px]">
                                             <!-- Additional required wrapper -->
                                             <div class="swiper-wrapper h-fit">
                                                 <!-- Slides -->
@@ -372,7 +372,7 @@
                             <p class="text-center py-2 rounded-t-[10px] bg-deep-champagne-lightest text-deep-champagne-darkest">
                                 Hallsbooking will be live soon!
                             </p>
-                            <div class="bg-white dark:bg-slate-800 p-6 lg:p-8" @click.away="open=false; doquotOpen=false; document.querySelector('body').style.overflow = 'auto';">
+                            <div class="bg-white dark:bg-slate-800 p-6 lg:p-8" @click.away="open=false; quotationsOpen=false; document.querySelector('body').style.overflow = 'auto';">
                                 <div class="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-8">
                                     <!-- Carousel -->
                                     <div class="lg:col-span-2">
