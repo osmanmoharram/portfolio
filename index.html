@@ -192,8 +192,8 @@
     <!-- swiper -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script defer>
-        (() => {            
-            new Swiper(".my-swiper", {
+        (async () => {            
+            await new Swiper(".my-swiper", {
                 spaceBetween: 30,
                 centeredSlides: true,
                 loop: true,
@@ -202,7 +202,7 @@
                 },
             });
     
-            new Swiper(".forum-swiper", {
+            await new Swiper(".forum-swiper", {
                 spaceBetween: 30,
                 centeredSlides: true,
                 loop: true,
@@ -219,7 +219,7 @@
                 },
             });
     
-            new Swiper(".doquot-swiper", {
+            await new Swiper(".doquot-swiper", {
                 spaceBetween: 30,
                 centeredSlides: true,
                 loop: true,
@@ -237,7 +237,7 @@
                 
             });
     
-            new Swiper(".halls-swiper", {
+            await new Swiper(".halls-swiper", {
                 spaceBetween: 30,
                 centeredSlides: true,
                 loop: true,
@@ -254,7 +254,7 @@
                 },
             });
     
-            new Swiper(".aov-swiper", {
+            await new Swiper(".aov-swiper", {
                 spaceBetween: 30,
                 centeredSlides: true,
                 loop: true,
