@@ -184,15 +184,51 @@
 
     <!-- scripts -->
     <!-- include sections -->
-    <script> includeHTML(); </script>
+    <script defer> includeHTML(); </script>
 
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js" defer></script>
 
     <!-- swiper -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
+    <script defer>
+        new Swiper(".my-swiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+        });
+
+        new Swiper(".forum-swiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+        });
+
+        new Swiper(".doquot-swiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+        });
+
+        new Swiper(".halls-swiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+        });
+
+        new Swiper(".aov-swiper", {
             spaceBetween: 30,
             centeredSlides: true,
             loop: true,
