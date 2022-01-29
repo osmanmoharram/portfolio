@@ -1,0 +1,639 @@
+<section id="projects" class="px-6 pt-24 pb-96 sm:pb-36 xl:pb-16 bg-gradient-to-b dark:bg-gradient-to-b from-slate-50 dark:from-slate-900 via-slate-50 dark:via-slate-900 to-white dark:to-slate-900">
+    <div class="max-w-7xl mx-auto">
+        <!-- Title -->
+        <div>
+            <div class="flex items-center space-x-2 text-deep-champagne-darker">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg>
+
+                <h2 class="text-lg font-normal">
+                    Projects
+                </h2>
+            </div>
+            <p class="my-3 font-black text-4xl text-independence dark:text-slate-300">
+                Have a look at some of my work
+            </p>
+            <p class="text-slate-400 max-w-2xl text-lg tracking-wide">
+                Here are some of the work I've done over the years.<br>Feel free to sea it live of examin the code.
+            </p>
+        </div> <!-- End of Title -->
+
+        <!-- Projects -->
+        <div class="flex flex-col sm:projects-class">
+            <!-- Forum -->
+            <div x-data="{ open: false }">
+                <div class="max-w-lg mx-auto transform translate-y-24 -rotate-12 text-center sm:max-w-full sm:scale-110 sm:translate-x-10">
+                    <img
+                        src="../img/projects/forum/edited/register.png"
+                        alt="Forum"
+                        @click="open = true; document.querySelector('body').style.overflow = 'hidden'"
+                        class="rounded-[10px] lg:blur-sm hover:blur-0 transition duration-150 ease-linear cursor-pointer"
+                    >
+
+                    <span class="block mt-4 text-center text-slate-400 font-black uppercase tracking-wide">Forum</span>
+                </div>
+
+                <div
+                    class="fixed z-10 inset-0 overflow-y-auto"
+                    aria-labelledby="modal-title"
+                    role="dialog" aria-modal="true"
+                    x-show="open"
+                    style="display: none;"
+                >
+                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"
+                            x-show="open"
+                            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
+                        ></div>
+
+                        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-show="open"
+                            class="inline-block align-bottom bg-white dark:bg-slate-800 rounded-[10px] text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-11/12 max-w-7xl"
+                        >
+                            <p class="text-center py-2 rounded-t-[10px] bg-deep-champagne-lightest text-deep-champagne-darkest">
+                                Forum will be live soon!
+                            </p>
+                            <div class="bg-white dark:bg-slate-800 p-6 lg:p-8" @click.away="open=false; document.querySelector('body').style.overflow = 'auto';">
+                                <div class="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-8">
+                                    <!-- Carousel -->
+                                    <div class="lg:col-span-2">
+                                        <div class="swiper lg:h-[400px]">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper h-fit">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/forum/edited/register.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/forum/edited/login.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/forum/edited/all-topics.png" alt="" class="h-full">
+                                                </div>
+                                            </div>
+
+                                            <!-- If we need pagination -->
+                                            <div class="swiper-pagination"></div>
+
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+
+                                            <!-- If we need scrollbar -->
+                                            <div class="swiper-scrollbar"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Project Details -->
+                                    <div class="lg:col-span-1 flex flex-col space-y-8 mt-8 xl:mt-0">
+                                        <div>
+                                            <h3 class="text-2xl text-independence dark:text-slate-300 font-black tracking-wide">
+                                                Forum
+                                            </h3>
+
+                                            <div class="text-sm tracking-wide text-independence-light mt-4 space-y-4">
+                                                <p>
+                                                    It doesn't have a name yet but it's a platform for web/mobile developers, software engineers and others to discuss topics, find and share solutions to the problems they face. 
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <ul class="flex items-center flex-wrap">
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Laravel
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Tailwindcss
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Tailwindui
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Alpine.js
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Highlightjs
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Markdown-it
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Heroicons
+                                            </li>
+                                        </ul>
+
+                                        <div class="flex space-x-2">
+                                            <a
+                                                href="#"
+                                                class="hidden items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                                </svg>
+                                                <span>Live</span>
+                                            </a>
+                                            <a
+                                                href="https://github.com/osmanmoharram/forum.git"
+                                                class="flex items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                                </svg>
+                                                <span>Code</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Forum -->
+
+            <!-- Quotations Package -->
+            <div x-data="{ open: false }" class="col-start-2 row-start-2">
+                <div class="max-w-lg mx-auto transform rotate-12 translate-y-40 rounded-[10px] sm:max-w-full sm:translate-x-44 sm:scale-110 lg:translate-x-64">
+                    <img
+                        src="../img/projects/doquot/index.png"
+                        alt="Quotations Package"
+                        @click="open = true; document.querySelector('body').style.overflow = 'hidden';"
+                        class="rounded-[10px]  lg:blur-sm hover:blur-0 cursor-pointer transition duration-100 ease-linear"
+                    >
+
+                    <span class="block mt-4 text-center text-slate-400 font-black uppercase tracking-wide">Quotations Package</span>
+                </div>
+
+                <div
+                    class="fixed z-10 inset-0 overflow-y-auto"
+                    aria-labelledby="modal-title"
+                    role="dialog" aria-modal="true"
+                    x-show="open"
+                    style="display: none;"
+                >
+                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"
+                            x-show="open"
+                            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
+                        ></div>
+
+                        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-show="open"
+                            class="inline-block align-bottom bg-white dark:bg-slate-800 rounded-[10px] text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-11/12 max-w-7xl"
+                        >
+                            <p class="text-center py-2 rounded-t-[10px] bg-deep-champagne-lightest text-deep-champagne-darkest">
+                                Quotations will be live soon!
+                            </p>
+                            <div class="bg-white dark:bg-slate-800 p-6 lg:p-8" @click.away="open=false; document.querySelector('body').style.overflow = 'auto';">
+                                <div class="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-8">
+                                    <!-- Carousel -->
+                                    <div class="lg:col-span-2">
+                                        <div class="swiper lg:h-[400px]">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper h-fit">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/doquot/create.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/doquot/edit.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/doquot/index.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/doquot/show.png" alt="" class="h-full">
+                                                </div>
+                                            </div>
+
+                                            <!-- If we need pagination -->
+                                            <div class="swiper-pagination"></div>
+
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+
+                                            <!-- If we need scrollbar -->
+                                            <div class="swiper-scrollbar"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Project Details -->
+                                    <div class="lg:col-span-1 flex flex-col space-y-8 mt-8 xl:mt-0">
+                                        <div>
+                                            <h3 class="text-2xl text-independence dark:text-slate-300 font-black tracking-wide">
+                                                Quotations Package
+                                            </h3>
+                                            
+                                            <div class="text-sm tracking-wide text-independence-light mt-4 space-y-4">
+                                                <p>
+                                                    This package handles the creation and managing of your business quotations.
+                                                    It's simple, easy to use and you can learn to use it very quickly.
+                                                </p>
+
+                                                <p class="mt-4">
+                                                    It was built with <a href="https://laravel.com/" class="text-deep-champagne underline hover:text-deep-champagne-dark transition duration-100 ease-linear">Laravel</a> Framework and
+                                                    with the purpose to be integrated with <a href="https://bagisto.com/en/" class="text-deep-champagne underline hover:text-deep-champagne-dark transition duration-100 ease-linear">Bagisto</a> framework but it can be tweaked to work independently.
+                                                </p>
+
+                                                <div class="mt-4">
+                                                    <p>
+                                                        It has the following features:
+                                                    </p>
+                                                    <ul class="list-disc pl-3" role="role">
+                                                        <li class="feature">Create new quotation</li>
+                                                        <li class="feature">Edit an existing quotations</li>
+                                                        <li class="feature">Add/remove products to/from quotation</li>
+                                                        <li class="feature">Calculate subtotal and total with and without taxes</li>
+                                                        <li class="feature">Export to pdf</li>
+                                                        <li class="feature">Export to excel</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <ul class="flex items-center flex-wrap">
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Laravel 
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Bagisto
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Bootstrap
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Javascript
+                                            </li>
+                                        </ul>
+
+                                        <div class="flex space-x-2">
+                                            <a
+                                                href="#"
+                                                class="hidden items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                                </svg>
+                                                <span>Live</span>
+                                            </a>
+                                            <a
+                                                href="https://github.com/osmanmoharram/quotationspackage.git"
+                                                class="flex items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                                </svg>
+                                                <span>Code</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Quotations Package -->
+
+            <!-- Hallsbooking -->
+            <div x-data="{ open: false }">
+                <div class="max-w-lg mx-auto transform -rotate-12 translate-y-56 sm:translate-y-24 sm:rotate-0 sm:scale-125 sm:translate-x-12">
+                    <img
+                        src="../img/projects/hallsbooking/all-halls.png"
+                        alt="Hallsbooking"
+                        @click="open = true; document.querySelector('body').style.overflow = 'hidden';"
+                        class="rounded-[10px] lg:blur-sm hover:blur-0 cursor-pointer transition duration-100 ease-linear"
+                    >
+
+                    <span class="block mt-4 text-center text-slate-400 font-black uppercase tracking-wide">Hallsbooking</span>
+                </div>
+
+                <div
+                    class="fixed z-10 inset-0 overflow-y-auto"
+                    aria-labelledby="modal-title"
+                    role="dialog" aria-modal="true"
+                    x-show="open"
+                    style="display: none;"
+                >
+                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"
+                            x-show="open"
+                            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
+                        ></div>
+
+                        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-show="open"
+                            class="inline-block align-bottom bg-white dark:bg-slate-800 rounded-[10px] text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-11/12 max-w-7xl"
+                        >
+                            <p class="text-center py-2 rounded-t-[10px] bg-deep-champagne-lightest text-deep-champagne-darkest">
+                                Hallsbooking will be live soon!
+                            </p>
+                            <div class="bg-white dark:bg-slate-800 p-6 lg:p-8" @click.away="open=false; doquotOpen=false; document.querySelector('body').style.overflow = 'auto';">
+                                <div class="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-8">
+                                    <!-- Carousel -->
+                                    <div class="lg:col-span-2">
+                                        <div class="swiper lg:h-[400px]">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper h-fit">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/hallsbooking/all-halls.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/hallsbooking/customers.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/hallsbooking/new-hall.png" alt="" class="h-full">
+                                                </div>
+                                            </div>
+
+                                            <!-- If we need pagination -->
+                                            <div class="swiper-pagination"></div>
+
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+
+                                            <!-- If we need scrollbar -->
+                                            <div class="swiper-scrollbar"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Project Details -->
+                                    <div class="lg:col-span-1 flex flex-col space-y-8 mt-8 xl:mt-0">
+                                        <div>
+                                            <h3 class="text-2xl text-independence dark:text-slate-300 font-black tracking-wide">
+                                                Hallsbooking
+                                            </h3>
+                                            
+                                            <div class="text-sm tracking-wide text-independence-light mt-4 space-y-4">
+                                                <p>
+                                                    The primary role of Hallsbooking system as the name suggests is to manage the process of booking big halls for celebrations or special occasions.
+                                                    But Hallsbooking is so much more than that, here are some of its feature:
+                                                </p>
+
+                                                <ul class="list-disc pl-3" role="role">
+                                                    <li class="feature">
+                                                        Make inspections appointments for clients to inspect halls
+                                                    </li>
+                                                    <li class="feature">
+                                                        Create offers for special occasions or special clients
+                                                    </li>
+                                                    <li class="feature">
+                                                        Create offers for annual or recurring ocassions to be applied automatically each time the occasion happends
+                                                    </li>
+                                                    <li class="feature">Calculate subtotal and total with and without taxes</li>
+                                                    <li class="feature">
+                                                        Not all halls are alike, so you may want to provide options to some halls and not all halls
+                                                        like if some halls can provide security services or certain types of food. Hallsbooking allows
+                                                        you to do just that, It allows you to create new options and deside which hall
+                                                        should provide that option
+                                                    </li>
+                                                    <li class="feature">
+                                                        Keep a history of every occasion happend on each hall
+                                                    </li>
+                                                    <li class="feature">
+                                                        Manage clients contracts
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <ul class="flex items-center flex-wrap">
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Laravel 
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Tailwindcss
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Javascript
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Heroicons
+                                            </li>
+                                        </ul>
+
+                                        <div class="flex space-x-2">
+                                            <a
+                                                href="#"
+                                                class="hidden items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                                </svg>
+                                                <span>Live</span>
+                                            </a>
+                                            <a
+                                                href="https://github.com/osmanmoharram/hallsbooking.git"
+                                                class="flex items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                                </svg>
+                                                <span>Code</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Hallsbooking -->
+
+            <!-- AOV -->
+            <div x-data="{ open: false }" class="row-start-1 col-start-2 col-span-2">
+                <div class="max-w-lg mx-auto rotate-12 transform translate-y-72 sm:max-w-full sm:translate-y-24 sm:translate-x-7 sm:rotate-0 sm:scale-90">
+                    <img
+                        src="../img/projects/aov/edited/landing-page.png"
+                        alt="AOV"
+                        @click="open = true; document.querySelector('body').style.overflow = 'hidden';"
+                        class="rounded-[10px] lg:blur-sm hover:blur-0 cursor-pointer transition duration-100 ease-linear"
+                    >
+
+                    <span class="block mt-4 text-center text-slate-400 font-black uppercase tracking-wide text-xl">AOV</span>
+                </div>
+
+                <div
+                    class="fixed z-10 inset-0 overflow-y-auto"
+                    aria-labelledby="modal-title"
+                    role="dialog" aria-modal="true"
+                    x-show="open"
+                    style="display: none;"
+                >
+                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"
+                            x-show="open"
+                            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
+                        ></div>
+
+                        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                        <div
+                            x-transition:enter="ease-out duration-300"
+                            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave="ease-in duration-200"
+                            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            x-show="open"
+                            class="inline-block align-bottom bg-white dark:bg-slate-800 rounded-[10px] text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-11/12 max-w-7xl"
+                        >
+                            <div class="bg-white dark:bg-slate-800 p-6 lg:p-8" @click.away="open=false; document.querySelector('body').style.overflow = 'auto';">
+                                <div class="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:space-x-8">
+                                    <!-- Carousel -->
+                                    <div class="lg:col-span-2">
+                                        <div class="swiper lg:h-[400px]">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper h-fit">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/aov/edited/landing-page.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/aov/edited/projects.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/aov/edited/new-project.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/aov/edited/project-details.png" alt="" class="h-full">
+                                                </div>
+                                                <div class="swiper-slide bg-center bg-cover rounded-[10px] border dark:border-none overflow-hidden">
+                                                    <img src="../img/projects/aov/edited/user-profile-page.png" alt="" class="h-full">
+                                                </div>
+                                            </div>
+
+                                            <!-- If we need pagination -->
+                                            <div class="swiper-pagination"></div>
+
+                                            <!-- If we need navigation buttons -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+
+                                            <!-- If we need scrollbar -->
+                                            <div class="swiper-scrollbar"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Project Details -->
+                                    <div class="lg:col-span-1 flex flex-col space-y-8 mt-8 xl:mt-0">
+                                        <div>
+                                            <h3 class="text-2xl text-independence dark:text-slate-300 font-black tracking-wide">
+                                                AOV-Consultancy
+                                            </h3>
+                                            
+                                            <div class="text-sm tracking-wide text-independence-light mt-4 space-y-4">
+                                                <p>
+                                                    AOV-Consultancy is a multi role application with the ambition to become so much greater.
+                                                </p>
+                                                <p>
+                                                    It introduces AOV-consultancy engineering company to the world in a simple and clear way
+                                                    as well as acting as a management system for the company leadership. It also acts as a
+                                                    communication channel between the clients and the employees who supervise the clients projects and
+                                                    helps the clients to keep track of their projects progress.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <ul class="flex items-center flex-wrap">
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Laravel 
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Tailwindcss
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Tailwindui
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Javascript
+                                            </li>
+                                            <li class="px-4 py-1 ml-1 mt-1 rounded-[10px] bg-deep-champagne-lightest text-xs text-independence-lighter border border-deep-champagne-light dark:bg-slate-600/30 dark:text-slate-300 dark:border-slate-500/10">
+                                                Heroicons
+                                            </li>
+                                        </ul>
+
+                                        <div class="flex space-x-2">
+                                            <a
+                                                href="https://aov-consultancy.com/"
+                                                class="flex items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                                </svg>
+                                                <span>Live</span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="hidden items-center space-x-2 px-4 py-2 rounded-[10px] bg-independence border dark:border-none hover:bg-independence-lighter tracking-wide transition duration-150 ease-linear cursor-pointer text-slate-100"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                                </svg>
+                                                <span>Code</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of AOV -->
+        </div> <!-- End of Projects -->
+    </div>
+</section>

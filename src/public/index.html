@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Portfolio - Home</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Scripts -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js"
+        integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+        //require files
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }      
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
+
+        // Dark-Light Theme Mode
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark')
+                } else {
+                    document.documentElement.classList.remove('dark')
+                }
+            }
+        );
+
+        function updateTheme() {
+            if (!('theme' in localStorage)) {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark')
+                }
+            }
+
+            switch (localStorage.theme) {
+                case 'light':
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('color-theme', 'light');
+                    break;
+
+                case 'dark':
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.setAttribute('color-theme', 'dark');
+                    break;
+            }
+        }
+
+        updateTheme();
+    </script>
+</head>
+
+<body class="bg-white font-roboto text-slate-300 text-base font-medium tracking-wide dark:bg-slate-900 dark:text-slate-400">
+    <header class="flex justify-between items-center max-w-7xl mx-auto py-8 px-5">
+        <a href="/" title="http://osmanmoharram">
+            <img src="./img/me.svg" alt="logo" class="w-[75px] h-[75px]">
+        </a>
+        
+        <nav>
+            <div>
+                <ul class="flex items-center space-x-6 text-sm text-independence text-opacity-80 dark:text-slate-400 dark:text-opacity-60">
+                    <li>
+                        <a href="/" class="block rounded-[10px] cursor-pointer hover:text-deep-champagne-lighter transition duration-100 ease-linear" title="Home page">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://portfolio/about.html" class="block rounded-[10px] cursor-pointer hover:text-deep-champagne-lighter transition duration-100 ease-linear" title="About page">
+                            About
+                        </a>
+                    </li>
+                    <li x-data="{ visible: false }" class="relative">
+                        <button type="button" id="selected" x-ref="selectedOption" @click="visible = ! visible" class="relative cursor-pointer text-deep-champagne dark:text-opacity-80"
+                            aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" title="Theme mode"
+                        >
+                            <span class="dark:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </span>
+
+                            <span class="hidden dark:inline">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <ul x-show="visible"
+                            x-transition:leave="transition ease-in duration-100"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"
+                            @click.away="visible = false"
+                            class="absolute right-0 z-50 mt-1 w-36 bg-white dark:bg-slate-800 shadow-lg rounded-md p-1 text-sm ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3"
+                            style="display: none"
+                        >
+                            <!-- Light Mode -->
+                            <li class="flex items-center space-x-4 hover:bg-deep-champagne dark:hover:bg-slate-700 hover:bg-opacity-20 dark:hover:bg-opacity-40 rounded-[10px] dark:text-slate-400 dark:text-opacity-60 cursor-pointer p-2"
+                                id="light" role="option" @click="visible = false; $store.theme.set('light')"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+
+                                <span class="text-slate-400 ">Light</span>
+                            </li>
+
+                            <!-- Dark Mode -->
+                            <li class="flex items-center space-x-4 hover:bg-deep-champagne dark:hover:bg-slate-700 hover:bg-opacity-20 dark:hover:bg-opacity-40 rounded-[10px] dark:text-slate-400 dark:text-opacity-60 cursor-pointer p-2"
+                                id="dark" role="option" @click="visible = false; $store.theme.set('dark')"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                </svg>
+
+                                <span class="text-slate-400">Dark</span>
+                            </li>
+
+                            <!-- System Mode -->
+                            <li class="flex items-center space-x-4 hover:bg-deep-champagne dark:hover:bg-slate-700 hover:bg-opacity-20 dark:hover:bg-opacity-40 rounded-[10px] dark:text-slate-400 dark:text-opacity-60 cursor-pointer select-none p-2"
+                                id="system" role="option" @click="visible = false; $store.theme.set('system')"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+
+                                <span class="text-slate-400">
+                                    System
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div w3-include-html="./sections/hero.html"></div> 
+
+        <div w3-include-html="./sections/services.html"></div> 
+
+        <div w3-include-html="./sections/projects.html"></div> 
+
+        <div w3-include-html="./sections/contact.html"></div> 
+    </main>
+
+    <!-- scripts -->
+    <script> includeHTML(); </script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx tailwindcss -i ./src/css/app.css -o ./src/public/css/app.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osmanmoharram/portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "osman moharram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osmanmoharram/portfolio/issues"
+  },
+  "homepage": "https://github.com/osmanmoharram/portfolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.17"
+  }
+}
