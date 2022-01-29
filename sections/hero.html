@@ -1,33 +1,58 @@
 <section class="px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 h-[500px] shadow-sm dark:border-none bg-slate-50 dark:bg-slate-800 dark:bg-opacity-50 rounded-[10px]">
-        <div class="relative col-span-2 pl-8 md:pl-16 sm:col-span-1 flex items-center md:justify-center">
-            <div class="space-y-12">
-                <h1 class="text-slate-300 text-opacity-80 text-6xl max-w-md md:text-7xl font-black leading-none dark:text-slate-700">
-                    <span class="text-shadow-xs dark:text-shadow-xs-dark">I am a </span>
-                    <span class="text-shadow text-deep-champagne">web</span>
-                    <span class="text-shadow-xs dark:text-shadow-xs-dark">developer</span>
+    <div class="pl-4 sm:pl-6 py-16 max-w-7xl mx-auto grid grid-cols-2 items-center shadow-sm dark:border-none bg-slate-50 dark:bg-slate-800 dark:bg-opacity-50 rounded-[10px]">
+        <div class="col-span- sm:col-span-1 max-w-md mx-auto space-y-8">
+            <div class="tracking-wide text-independence dark:text-slate-300 text-opacity-60 space-y-4">
+                <p class="ml-1 text-base font-light">Hello, I am</p>
+                <h1 class="text-5xl lg:text-7xl text-deep-champagne font-black uppercase">
+                    Osman Moharram
                 </h1>
-                <div class="inline-flex items-center space-x-4 text-base font-medium">
-                    <a href="#reachMe" class="inline-block cursor-pointer bg-deep-champagne w-28 py-3 rounded-[10px] text-independence-lighter text-center tracking-wide hover:shadow-sm hover:bg-deep-champagne-darker transition duration-200 ease-linear" title="Go to reach me form">
-                        Reach Me
-                    </a>
-
-                    <a href="#projects" class="inline-block cursor-pointer w-28 py-3 rounded-[10px] border-2 text-center tracking-wide text-slate-400/80 border-slate-300 hover:bg-slate-300 hover:text-white dark:text-slate-500 dark:border-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-300  transition duration-100 ease-linear" title="Go to projects section">
-                        Projects
-                    </a>
-                </div>
+                <p class="text-base font-light">
+                    Web Developer &bullet; UI/UX Designer &bullet; Real Madrid FC Fan
+                </p>
             </div>
 
-            <img class="w-7/12 max-w-xs absolute -bottom-24 right-2 sm:hidden" src="img/svg/coder.svg" alt="Image">
+            <div class="inline-flex items-center space-x-4 text-base font-medium">
+                <a href="#reachMe" class="inline-block cursor-pointer bg-deep-champagne w-28 py-3 rounded-[10px] text-independence-lighter text-center tracking-wide hover:shadow-sm hover:bg-deep-champagne-darker transition duration-200 ease-linear" title="Go to reach me form">
+                    Reach Me
+                </a>
+                <a href="#projects" class="inline-block cursor-pointer w-28 py-3 rounded-[10px] border-2 text-center tracking-wide text-independence/60 border-independence/50 hover:bg-independence/80 hover:border-independence/5 hover:text-white dark:text-slate-500 dark:border-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-300  transition duration-100 ease-linear" title="Go to projects section">
+                    Projects
+                </a>
+            </div>
         </div>
 
-        <div class="hidden sm:flex flex-col items-center justify-center col-span-1 relative">
-            <img class="w-11/12 max-w-sm" src="img/svg/coder.svg" alt="Image">
-            <img
-                class="sm:w-[120%] sm:right-[15%] md:w-96 md:-left-1/2  lg:w-[100%] lg:-bottom-40 max-w-xl absolute -bottom-24"
-                src="img/svg/code-thinking.svg"
-                alt="Image"
-            >
+        <div class="col-span-0 hidden sm:col-span-1 sm:flex items-center justify-end relative">
+            <div class="swiper mySwiper w-[312px] h-[320px]">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="img/about/me1.jpg" alt="Me1" class="rounded-[18px]">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center rounded-[18px]">
+                        <img src="img/about/me2.jpg" alt="Me2" class="rounded-[18px]">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="img/about/me3.jpg" alt="Me3" class="rounded-[18px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper mySwiper" style="display: none;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
+    
